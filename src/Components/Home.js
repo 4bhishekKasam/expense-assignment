@@ -1,9 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchItems } from "../actions/index";
+import Pagination from "./Pagination";
 import "../App.css";
 
+const pageSize = 10;
+
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pageFromCallback: 1
+    };
+    //   this.getPageNo = this.getPageNo.bind(this);
+  }
+
   componentWillMount() {
     this.props.fetchItems();
     console.log(this.props.items);
@@ -20,7 +31,6 @@ class Home extends Component {
             <div className="col-5" style={{}}>
               <div className="row">
                 <div className="col-sm-12">
-               
                   <b>Budget Overview</b>{" "}
                 </div>
               </div>
@@ -77,6 +87,11 @@ class Home extends Component {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <Pagination />
             </div>
           </div>
         </div>
