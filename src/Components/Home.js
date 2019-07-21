@@ -20,7 +20,7 @@ class Home extends Component {
             <div className="col-5" style={{}}>
               <div className="row">
                 <div className="col-sm-12">
-                  {" "}
+               
                   <b>Budget Overview</b>{" "}
                 </div>
               </div>
