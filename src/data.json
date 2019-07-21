@@ -1,0 +1,40 @@
+{
+    "totalBudget": "2000000",
+    "expenses": [
+        {
+            "category": "Grocery",
+            "id": 1,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 2,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 3,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 4,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 5,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        }
+    ]
+}
