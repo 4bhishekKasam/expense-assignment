@@ -1,4 +1,4 @@
-import { FETCH_ITEMS } from "../types";
+import { FETCH_ITEMS, UPDATE_TOTAL_BUDGET } from "../types";
 
 const initialState = {
   items: [],
@@ -18,6 +18,13 @@ export default (state = initialState, action) => {
           (sum, expenses) => sum + expenses.amount,
           0
         )
+      };
+
+    case UPDATE_TOTAL_BUDGET:
+      console.log("---");
+      return {
+        ...state,
+        totalBudget: action.payload
       };
 
     default:

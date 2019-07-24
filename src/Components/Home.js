@@ -4,7 +4,7 @@ import { fetchItems } from "../actions/index";
 import Pagination from "./Pagination";
 import "../App.css";
 
-const pageSize = 10;
+const pageSize = 5;
 
 class Home extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Home extends Component {
     this.state = {
       pageFromCallback: 1
     };
-    //   this.getPageNo = this.getPageNo.bind(this);
+    this.getPageNo = this.getPageNo.bind(this);
   }
 
   componentWillMount() {
@@ -20,8 +20,23 @@ class Home extends Component {
     console.log(this.props.items);
   }
 
+  getPageNo(selectedPage) {
+    this.setState(
+      { pageFromCallback: selectedPage }
+      //    , () => console.log(this.state.pageFromCallback)
+    );
+  }
+
   render() {
     const { totalBudget, items, totalExpense } = this.props;
+
+    function noOfPage() {
+      return Math.ceil(items.length / pageSize);
+    }
+
+    const pageStartIndex = pageSize * (this.state.pageFromCallback - 1);
+    const pageEndIndex = Math.min(pageStartIndex + pageSize, items.length);
+    const availableData = items.slice(pageStartIndex, pageEndIndex);
 
     return (
       <div>
@@ -55,7 +70,13 @@ class Home extends Component {
         <div className="container" style={{ border: ".0px solid black" }}>
           <div className="row">
             <div className="col-12">
-              <button type="button" className="btn btn-primary float-left">
+              <button
+                type="button"
+                className="btn btn-primary"
+                data-toggle="modal"
+                data-target="#exampleModal"
+                data-whatever="@mdo"
+              >
                 Add Expense
               </button>
             </div>
@@ -74,7 +95,7 @@ class Home extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {items.map(item => (
+                  {availableData.map(item => (
                     <tr key={item.id}>
                       <td>
                         <i className="fa fa-pencil" aria-hidden="true" />{" "}
@@ -91,7 +112,7 @@ class Home extends Component {
           </div>
           <div className="row">
             <div className="col-12">
-              <Pagination />
+              <Pagination pages={noOfPage()} callbackFromApp={this.getPageNo} />
             </div>
           </div>
         </div>

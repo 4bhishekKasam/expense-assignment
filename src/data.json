@@ -35,6 +35,54 @@
             "itemName": "Breed",
             "amount": 20,
             "expenseDate": ""
+        }, {
+            "category": "Grocery",
+            "id": 6,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 7,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 8,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 9,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 10,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 11,
+            "itemName": "Breed",
+            "amount": 20,
+            "expenseDate": ""
+        },
+        {
+            "category": "Grocery",
+            "id": 12,
+            "itemName": "Breeds",
+            "amount": 20,
+            "expenseDate": ""
         }
     ]
 }
